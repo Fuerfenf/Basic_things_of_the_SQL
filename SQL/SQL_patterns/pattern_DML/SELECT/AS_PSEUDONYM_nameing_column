@@ -1,0 +1,8 @@
+->
+    pseudonym
+    {
+        -> 
+            SELECT {col name}, ... AS {out column name}
+            FROM {table name} INNER JOIN {table2 name} ON {col table} = {col table2}
+    }
+->  

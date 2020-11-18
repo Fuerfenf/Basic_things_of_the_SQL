@@ -1,0 +1,40 @@
+->
+    subquery
+    {
+        ->
+            SELECT {col name}, ...
+            FROM {table name}
+            WHERE {col name} IN (SELECT {col name} FROM {table name})
+            ->
+                SELECT col
+                FROM table WHERE col2 IN (SELECT DISTINCT col2 FROM table2)
+    }
+->
+    WHERE EXIST
+    {
+        ->
+            SELECT {col name}, ...
+            FROM {table name}
+            WHERE EXISTS (
+                SELECT {col name} FROM {table name}
+                WHERE {col name} = {some data or col from first table}
+                )
+    }
+->
+    quantifier
+    {
+        -> ANY
+            SELECT {col name}, ...
+            FROM {table name}
+            WHERE {col name} = ANY(
+                SELECT {col name} FROM {table name}
+                WHERE {col name} = {some data or col from first table}
+                )
+        -> ALL
+            SELECT {col name}, ...
+            FROM {table name}
+            WHERE {col name} = ALL(
+                SELECT {col name} FROM {table name}
+                WHERE {col name} = {some data or col from first table}
+                )
+    }

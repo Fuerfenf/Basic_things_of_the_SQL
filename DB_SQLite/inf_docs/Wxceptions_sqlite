@@ -1,0 +1,32 @@
+SQLite Database Exceptions
+Exception sqlite3.Warning
+
+A subclass of Exception. And you can ignore it if you want it doesn’t stop the execution.
+Exception sqlite3.Error
+
+The base class of the other exceptions in the sqlite3 module. It is a subclass of Exception.
+Exception sqlite3.DatabaseError
+
+Exception raised for errors that are related to the database.
+Examples: If you try and open a file as a sqlite3 database that is NOT a database file, you will get
+sqlite3.DatabaseError: file is encrypted or is not a database
+Exception sqlite3.IntegrityError
+
+Subclass of a DatabaseError.  You will get this Exception when the relational integrity of the database is affected,
+e.g., a foreign key check fails.
+Exception sqlite3.ProgrammingError
+
+It is also a subclass of DatabaseError. This exception raised because of programming errors, e.g., creating a table
+with the same which already exists, syntax error in the SQL queries.
+Exception sqlite3.OperationalError
+
+It is also a subclass of DatabaseError. This error is not in our control. This exception raised for errors that are
+related to the database’s operation.
+Examples: an accidental disconnect, server down, a timeout occurs, the data source issues. server down
+Exception sqlite3.NotSupportedError
+
+You will get an exception raised when database API was used which is not supported by the database.
+Example: calling the rollback() method on a connection that does not support the transaction. Calling commit after
+creating table command.
+So it will always be advisable to write all your database operation code in the try block so you can catch exceptions
+in except block if any and take the corrective actions against it.

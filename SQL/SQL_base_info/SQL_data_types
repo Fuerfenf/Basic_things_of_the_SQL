@@ -1,0 +1,60 @@
+Base info about data types
+    UTF8 coding from 1 to 4 bytes coding 1 symbols.
+->
+    integers
+    {
+        ->
+            smallint -  2 bytes 2^16
+        ->
+            integer  - 4 bytes 2^32
+        ->
+            bigint - 8 bytes 2^64
+        ->
+            smallserial/serial/bigserial - 2/4/8 bytes
+    }
+->
+    numbers
+    {
+        ->
+            decimal/numeric - variable (correct operations with finance)
+        ->
+            real/float - 4 bytes (6 decimal digits precision, used with mathematics)
+        ->
+            double/precision/float8/float - 8 bytes (15 decimal digits precision, used with mathematics)
+    }
+->
+    chares
+    {
+        ->
+            char - variable (fixed length: when bigger Exception, if shorter free position passed spaces )
+        ->
+            varchar - variable (fixed length: when bigger Exception, if shorter not add to free positions)
+        ->
+            text - variable (fixed length: when bigger Exception, if shorter free position passed spaces)
+    }
+->
+    logical
+    {
+        ->
+            boolean/bool - true/false
+    }
+->
+    temporal (data/time types)
+    {
+        ->
+            date - 4 bytes - store only date
+        ->
+            time - 8 bytes - store only time
+        ->
+            timestamp - 8 bytes - store date & time
+        ->
+            interval - 16 bytes - store difference between timestamps
+        ->
+            timestamptz - 8 bytes - store timestamp + timezone
+    }
+->
+    postgresql accepted other types as
+    {
+        ->
+            arrays, json, xml, geometric special types, custom types, null (marked no data)
+    }

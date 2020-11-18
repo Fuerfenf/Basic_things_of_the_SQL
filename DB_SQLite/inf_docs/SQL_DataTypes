@@ -1,0 +1,17 @@
+SQLite DataTypes:
+
+NULL: – The value is a NULL value.
+INTEGER: – To store the numeric value. The integer stored in 1, 2, 3, 4, 6, or 8 bytes depending
+on the magnitude of the number.
+REAL: – The value is a floating-point value, for example, 3.14 value of PI
+TEXT: – The value is a text string, TEXT value stored using the UTF-8, UTF-16BE or UTF-16LE encoding.
+BLOB: – The value is a blob of data, i.e., binary data. It is used to store images and files.
+The following Python types converted to SQLite without any problem. So when you are modifying or reading from
+SQLite table by performing CRUD operations, remember this table.
+
+Python/SQLite
+None/NULL
+int/INTEGER
+float/REAL
+str/TEXT
+bytes/BLOB

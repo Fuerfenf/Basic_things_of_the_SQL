@@ -1,0 +1,53 @@
+to:
+->
+    select all
+    {
+        ->
+        dont use it on product base !!!
+            SELECT * from {table name}
+    }
+->
+    select certain column
+    {
+        -> select column
+            SELECT {col name}, {col name}, ... FROM {table name}
+
+        -> select unique
+            SELECT DISTINCT {col name},... FROM {table name}
+
+        -> select with math operations
+            SELECT {col name}{math operator}{col name}, ...  FROM {table name}
+            -> SELECT col1*col2 FROM table
+
+        -> select witch count
+            -> SELECT COUNT {col name},... FROM {table name}
+            -> SELECT COUNT col1, col2 FROM table WHERE col3>20
+
+            -> only unique data (used DISTINCT)
+                SELECT COUNT {DISTINCT col name},... FROM {table name}
+
+    }
+->
+    select with order by
+    {
+        ->
+            SELECT {col name},... FROM {table name} ORDER BY {col name},... ASC|DESC
+            -> SELECT col1,col2 FROM table ORDER BY col1 DESC, col2 ASC
+
+    }
+->
+    select with min, max, avg
+    {
+        -> min
+            -> SELECT MIN({col name}) FROM {table}
+
+        -> avg
+            -> SELECT AVG({col name}) FROM {table}
+
+        -> max
+            -> SELECT MAX({col name}) FROM {table}
+
+        -> SUM
+            -> SELECT SUM({col name}) FROM {table}
+    }
+

@@ -1,0 +1,21 @@
+Arguments required to connect PostgreSQL database from Python
+
+- The username you use to work with PostgreSQL, The default username for the PostgreSQL
+database is Postgres.
+- Password – Password is given by the user at the time of installing the PostgreSQL.
+- Host Name  – is the server name or Ip address on which PostgreSQL is running.
+if you are running on localhost, then you can use localhost, or it’s IP i.e., 127.0.0.0
+- Database Name – Database name to which you want to connect. Here we are using
+Database named “postgres_db”.
+
+Steps to connect PostgreSQL through python
+
+Use the connect() method of psycopg2 with required arguments to connect PostgreSQL.
+Create a cursor object using the connection object returned by the connect method
+to execute PostgreSQL queries from Python.
+Close the Cursor object and PostgreSQL database connection after your work completes.
+Catch Exception if any that may occur during this process.
+
+
+
+https://pynative.com/psycopg2-python-postgresql-connection-pooling/

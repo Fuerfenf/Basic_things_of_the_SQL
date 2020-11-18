@@ -1,0 +1,30 @@
+to:
+->
+    primary key (unique, not null) unique field in tableё
+    {
+        ->
+            in table:
+            {field name} {data_type (int, serial,..)} PRIMARY KEY
+        ->
+            CONSTRAINT {PK name} PRIMARY KEY {key field table}
+        ->
+
+    }
+->
+    foreign key
+    {
+        ->
+            in table:
+            {field name} (int, serial,..)} REFERENCES {other table name}({other table field})
+        ->
+             CONSTRAINT {PK name} PRIMARY KEY {key field table} REFERENCES {teble2({field name})}
+    }
+    crossing (composite key)
+    {
+        -> 
+           in table:
+           CONSTRAINT {field name primary key} PRIMARY KEY ({key field first table}, {key field second table}) 
+    }
+->
+    unique data to col
+    {field name} {data type} UNIQUE NOT NULL

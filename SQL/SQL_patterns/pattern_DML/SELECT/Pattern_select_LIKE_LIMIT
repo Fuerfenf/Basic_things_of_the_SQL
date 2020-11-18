@@ -1,0 +1,29 @@
+-> LIKE
+    -> % - placeholder 0 to N symbols
+    -> _ - only one symbol
+    {
+        -> %/_ also we can used mixed placeholders
+            -> '{SYMBOLs}%/_' - line start SYMBOL
+                SELECT {col name},.. FROM {table name} WHERE {col name} LIKE '{SYMBOLs}%/_'
+
+            -> '%/_{SYMBOLs}' - line end SYMBOL
+                SELECT {col name},.. FROM {table name} WHERE {col name} LIKE '%/_{SYMBOLs}'
+
+            -> '%/_{SYMBOLs}%/_' - line include SYMBOL
+                SELECT {col name},.. FROM {table name} WHERE {col name} LIKE '%/_{SYMBOLs}%/_'
+
+            -> '{SYMBOLs}%/_{SYMBOLs}' - start an end on symbols
+                SELECT {col name},.. FROM {table name} WHERE {col name} LIKE '{SYMBOLs}%/_{SYMBOLs}'
+
+            -> mixed variant:
+                -> SELECT col1, col2 FROM table WHERE col2 LIKE '%num_'
+    }
+-> LIMIT
+    -> used for out limit lines
+        SELECT {col name},.. FROM {table name} WHERE {col name} LIMIT {count lines}
+        ->SELECT col FROM table WHERE col LIMIT 20
+-> CHECK ON NULL
+    -> is null
+        SELECT {col name},.. FROM {table name} WHERE {col name} IS NULL
+    -> is not null
+        SELECT {col name},.. FROM {table name} WHERE {col name} IS NOT NULL

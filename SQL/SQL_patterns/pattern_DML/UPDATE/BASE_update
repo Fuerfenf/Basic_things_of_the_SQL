@@ -1,0 +1,9 @@
+->
+    UPDATE
+    {
+        ->
+           UPDATE {table}
+           SET {col name},...
+           ...{params}
+    }
+->

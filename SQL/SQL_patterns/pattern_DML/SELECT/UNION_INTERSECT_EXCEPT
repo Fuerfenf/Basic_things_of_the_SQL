@@ -1,0 +1,18 @@
+-> UNION
+    {
+        -> (true)
+            SELECT {col name},... from {table name} UNION SELECT {col name},... from {table2 name}
+
+        -> UNION ALL
+             SELECT {col name},... from {table name} UNION ALL SELECT {col name},... from {table2 name}
+    }
+-> INTERSECT
+    {
+        ->
+            SELECT {col name},... from {table name} INTERSECT SELECT {col name},... from {table2 name}
+    }
+-> EXCEPT
+    {
+        ->
+            SELECT {col name},... from {table name} EXCEPT SELECT {col name},... from {table2 name}
+    }

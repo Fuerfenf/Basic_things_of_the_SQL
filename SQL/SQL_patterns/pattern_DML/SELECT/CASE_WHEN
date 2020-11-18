@@ -1,0 +1,13 @@
+to:
+->
+    {
+        ->
+            SELECT {col name}, ...
+               CASE WHEN {col name} {condition} THEN {something action}
+                   ...
+                   ELSE {something action}
+               END AS {col out name}
+            FROM {table name}
+            ... {methods sorted or other}
+    }
+->

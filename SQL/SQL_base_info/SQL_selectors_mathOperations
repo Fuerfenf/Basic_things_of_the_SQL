@@ -1,0 +1,39 @@
+->
+    selectors
+    {
+      ->
+            * - select all
+    }
+->
+    math operators
+    {
+        ->
+            + - summary
+        ->
+            - - subtraction
+        ->
+            * - multiply
+        ->
+            / - division
+        ->
+            ^ - degree
+        ->
+            |/ - square root
+    }
+->
+    comparison operators
+    {
+        ->
+            a=b
+        ->
+            a>b
+        ->
+            a>=b
+        ->
+            a<b
+        ->
+            a<=b
+        ->
+            a<>b or a!=b
+    }
+->

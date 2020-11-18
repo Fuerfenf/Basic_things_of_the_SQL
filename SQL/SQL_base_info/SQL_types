@@ -1,0 +1,7 @@
+Main types sql
+    {
+     -> DDL - data definition language - CREATE, ALTER, DROP;
+     -> DML - data manipulation language - SELECT, INSERT, UPDATE, DELETE;
+     -> TCL - transaction control language - COMMIT, ROLLBACK, SAVEPOINT (used after DML);
+     -> DCL - data control language - GRAND, REVOKE, DENY;
+    }

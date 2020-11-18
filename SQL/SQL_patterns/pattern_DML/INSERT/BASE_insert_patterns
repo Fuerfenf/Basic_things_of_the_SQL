@@ -1,0 +1,32 @@
+to:
+->
+    insert in table
+    {
+        ->
+            INSERT INTO {table name} VALUES
+            (),
+            ...
+            ()
+        ->
+
+    }
+->
+    insert and write to table
+    {
+        ->
+          INSERT INTO {table name}
+          SELECT {fields}
+          FROM {table2 name}
+          ... {diff params}
+    }
+->
+    RETURNING
+    {
+        ->
+          INSERT INTO {table name}
+          SELECT {fields}
+          FROM {table2 name}
+          ... {diff params}
+          RETURNING {needed fields}
+
+    }

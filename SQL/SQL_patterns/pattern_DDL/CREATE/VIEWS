@@ -1,0 +1,32 @@
+to:
+->  CREATE VIEW and SELECT
+    {
+        -> first - create view
+            CREATE VIEW {view name} AS
+            SELECT {field name}, ...
+            FROM {table name}
+            JOIN {table2 name} USING {field name}
+            ...;
+        -> second
+            SELECT {fields}
+            FROM {view name}
+            ...{other blocks for select example WHERE}...
+    }
+->  REPLACE
+    {
+        ->
+            CREATE OR REPLACE VIEW {view name} AS
+            ...
+            change params body od view
+            ...
+    }
+-> create CHECK
+    {
+        ->
+             CREATE VIEW {view name} AS
+            SELECT {field name}, ...
+            FROM {table name}
+            JOIN {table2 name} USING {field name}
+            ...
+            WITH LOCAL CHECK OPTION;
+    }

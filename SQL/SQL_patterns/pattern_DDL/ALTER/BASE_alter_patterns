@@ -1,0 +1,57 @@
+to:
+    ->
+        add column in table
+        {
+            ->
+                ALTER TABLE {table name}
+                ADD COLUMN {column name}
+            ->
+
+        }
+    ->
+        add foreign key to column in two tables
+        {
+            ->
+                ALTER TABLE {first table}
+                ADD CONSTRAINT {name of constraint}
+                FOREIGN KEY {first table field} REFERENCES {second table (second table field)}
+            ->
+
+        }
+    -> after ALTER TABLE  can used next:
+         ->
+            ADD COLUUMN {col_name} {data_type}
+            {
+
+            }
+        ->
+            RENAME TO {new_table_name}
+            {
+
+            }
+        ->
+            RENAME {old col name} To {new col name}
+            {
+
+            }
+        -> ALTER COLUMN {col name} SET DATA TYPE {data_type}
+            {
+
+            }
+    -> DROP
+        -> DROP TABLE {table name} (delete table)
+
+    -> TRUNCATE
+        -> TRUNCATE TABLE {table_name}
+
+    ->  CHECK
+            -> {col name} {data type} CONSTRAINT {constr name} CHECK ({condition})
+
+    ->
+        DEFAULT
+            -> in table
+                {col name} {type} DEFAULT {default value}
+                ...
+                then use
+                CONSTRAINT {constr name} CHECK ({condition with cols with DEFAULT})
+

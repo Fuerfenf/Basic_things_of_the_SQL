@@ -1,0 +1,7 @@
+Note: In the above example, we used cursor.fetchall() to get all the rows of a database table.
+
+Use cursor.execute() to run a query then use.
+
+cursor.fetchall() to fetch all rows.
+cursor.fetchone() to fetch single row.
+cursor.fetchmany(SIZE) to fetch limited rows

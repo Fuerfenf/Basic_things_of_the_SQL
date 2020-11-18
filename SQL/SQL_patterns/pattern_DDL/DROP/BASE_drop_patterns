@@ -1,0 +1,25 @@
+to:
+->
+    drop database
+    {
+        ->
+            DROP DATABASE {name of base}
+        ->
+
+    }
+->
+    drop table
+    {
+        ->
+            DROP TABLE {name of base}
+        ->
+            DROP TABLE {name of base} IF EXISTS
+        ->
+    }
+->
+    drop column
+    {
+        ->
+            ALTER TABLE {table name}
+            DROP COLUMN {column name};
+    }

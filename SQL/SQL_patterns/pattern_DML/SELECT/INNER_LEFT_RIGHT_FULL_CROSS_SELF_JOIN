@@ -1,0 +1,46 @@
+->
+    ->
+        for short write ON can use USING
+            SELECT {col name}, ... FROM {table name} INNER JOIN {table2 name} USING {col table2}
+->
+    INNER
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} INNER JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    LEFT
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} LEFT JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    RIGHT
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} RIGHT JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    FULL
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} FULL JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    CROSS
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} LEFT JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    SELF
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} LEFT JOIN {table2 name} ON {col table} = {col table2}
+    }
+->
+    JOIN
+    {
+        ->
+            SELECT {col name}, ... FROM {table name} LEFT JOIN {table2 name} ON {col table} = {col table2}
+    }

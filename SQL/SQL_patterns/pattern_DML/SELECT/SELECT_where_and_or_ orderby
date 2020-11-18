@@ -1,0 +1,48 @@
+->
+    WHERE
+    {
+        -> only WHERE
+            SELECT {col name}, {col name}, ... FROM {table name} WHERE {col name}{comparison operator}{necessary param}
+            -> SELECT col1, col2 FROM table WHERE col3='value'
+            -> SELECT col1, col2 FROM table WHERE col3>20
+
+        -> WHERE + AND
+            SELECT {col name},... FROM {table name} WHERE {col name}{comparison operator}{necessary param} AND {col name}{comparison operator}{necessary param}...
+            -> SELECT col1 FROM table WHERE col2>30 AND col3<20
+
+        -> WHERE + OR
+            SELECT {col name},... FROM {table name} WHERE {col name}{comparison operator}{necessary param} OR {col name}{comparison operator}{necessary param}...
+            -> SELECT col1 FROM table WHERE col2=30 or col2=20
+
+         -> WHERE + IN
+            SELECT {col name},... FROM {table name} WHERE {col name} IN {params list, ...}
+            ->  SELECT col1 FROM table WHERE col2 IN {'london', 'berlin'}
+
+        -> WHERE + NOT IN
+            SELECT {col name},... FROM {table name} WHERE {col name} NOT IN {params list, ...}
+            ->  SELECT col1 FROM table WHERE col2 IN {'london', 'berlin'}
+
+        -> WHERE + BETWEEN
+            SELECT {col name},... FROM {table name} WHERE {col name} BETWEEN {first value} AND {second value}
+            -> SELECT col1 FROM table WHERE col2 BETWEEN 20 and 40
+
+    }
+->
+    ORDER BY
+    {
+        -> group by
+            SELECT {col name},... FROM {table name} WHERE {col name} GROUP BY {col name}
+
+        -> order by
+            SELECT {col name},... FROM {table name} WHERE {col name} ORDER BY {col name}
+
+        -> group by + order by
+            SELECT {col name},... FROM {table name} WHERE {col name} GROUP BY {col name} ORDER BY {col name}
+
+->
+    HAVING
+    {
+        -> HAVING postfilter used after WHERE .. GROUP BY ... but before ORDER BY
+            SELECT {col name},... FROM {table name} WHERE {col name}{comparison operator}{necessary param} HAVING {condition} ORDER BY ...
+            -> SELECT col1, col2 FROM table WHERE col1 >20 GROUP BY col1 HAVING col2 > 1000 ORDER BY col2
+    }

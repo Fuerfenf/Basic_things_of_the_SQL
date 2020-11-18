@@ -1,0 +1,23 @@
+to:
+->
+    create database
+    {
+        ->
+            CREATE DATABASE {name of base}
+        ->
+
+    }
+->
+    create table
+    {
+        ->
+            CREATE TABLE {name of table}
+            (
+            {name of table _id} integer PRIMARY KEY,
+            {column name} {type} {if necessary input use this -> NOT NULL},
+            {column name foreign key} integer  REFERENCES {other table}(other table field)
+            …
+            ) {; you must use it after block if want create other table following this}
+        ->
+
+    }

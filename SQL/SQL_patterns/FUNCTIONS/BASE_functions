@@ -1,0 +1,31 @@
+-> BASE
+    {
+        ->
+            CREATE OR REPLACE FUNCTION {function name}() RETURNS {data to return or no to return use: void} AS $$
+                ...
+                body to return or change the params of data
+                ...
+            $$ language SQL;
+
+            SELECT {function name}();
+    }
+-> SCALAR
+    {
+        -> return only one value example
+            CREATE OR REPLACE FUNCTION {function name}() RETURNS {data type} AS $$
+                SELECT {operation} {field name}
+                FROM {table name}
+            $$ language SQL;
+
+            SELECT {function name}() AS {col name};
+
+             -> example:
+                CREATE OR REPLACE FUNCTION function() RETURNS bigint AS $$
+                    SELECT SUM {field name}
+                    FROM {table name}
+                 $$ language SQL;
+
+                SELECT {function name}() AS {col name};
+
+
+    }

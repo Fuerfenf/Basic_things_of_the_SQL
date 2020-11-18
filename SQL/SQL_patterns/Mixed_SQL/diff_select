@@ -1,0 +1,36 @@
+-> SELECTS
+    {
+        ->
+            SELECT {col name}, SUM ({col2 name})
+            FROM {table}
+            INNER JOIN {table2} ON {table}.{colX} = {table2}(colX)
+            GROUP BY {col name}
+            ORDER BY SUM ({col2 name}) DESC
+            LIMIT n
+
+        ->
+            SELECT {col name}, SUM ({col2 name})
+            FROM {table}
+            INNER JOIN {table2} ON {table}.{colX} = {table2}(colX)
+            WHERE {col name} > n
+            GROUP BY {col name}
+            HAVING SUM ({col2 name}) > n
+            ORDER BY SUM ({col2 name}) DESC
+        ->
+            SELECT col1, col2
+            FROM table
+            WHERE NOT EXISTS (
+                SELECT col4 FROM table2
+                WHERE col4 = table.col1
+                AND col5 BETWEEN 'data1' AND 'data2'
+                )
+        ->
+            SELECT col1, col2
+               CASE WHEN date_part('month', col2) BETWEEN 3 AND 5 THEN 'spring'
+               CASE WHEN date_part('month', col2) BETWEEN 6 AND 8 THEN 'summer'
+               CASE WHEN date_part('month', col2) BETWEEN 9 AND 11 THEN 'autumn'
+                   ELSE 'winter'
+               END AS seasons
+            FROM table
+
+    }
